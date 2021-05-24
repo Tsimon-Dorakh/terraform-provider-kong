@@ -73,13 +73,10 @@ func Provider() *schema.Provider {
 			"kong_route":                  resourceKongRoute(),
 		},
 
-		//DataSourcesMap: map[string]*schema.Resource{
-		//	"kong_api":         dataSourceKongApi(),
-		//	"kong_certificate": dataSourceKongCertificate(),
-		//	"kong_consumer":    dataSourceKongConsumer(),
-		//	"kong_plugin":      dataSourceKongPlugin(),
-		//	"kong_upstream":    dataSourceKongUpstream(),
-		//},
+		DataSourcesMap: map[string]*schema.Resource{
+			"kong_consumer": dataSourceKongConsumer(),
+		},
+
 		ConfigureFunc: providerConfigure,
 	}
 }
